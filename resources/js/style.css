@@ -1,0 +1,138 @@
+/* Базовые настройки */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f5f9;
+    color: #1f2937;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Контейнер приложения */
+#app {
+    width: min(100% - 32px, 760px);
+    margin: 40px auto;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+/* Форма добавления комментария */
+form {
+    display: grid;
+    gap: 18px;
+    padding: 24px;
+    margin-bottom: 28px;
+    background: #fff;
+    border: 1px solid #e5e9f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgb(15 23 42 / 4%);
+}
+
+form > div {
+    display: grid;
+    gap: 7px;
+}
+
+label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select,
+.mx-input {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    color: #1f2937;
+    background: #fff;
+    border: 1px solid #d7dce5;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.mx-input:focus {
+    border-color: #4778e6;
+    box-shadow: 0 0 0 3px rgb(71 120 230 / 12%);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Кнопка отправки */
+form button[type="submit"] {
+    justify-self: start;
+    padding: 11px 18px;
+    color: #fff;
+    background: #3568d4;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+form button[type="submit"]:hover:not(:disabled) {
+    background: #2854b5;
+}
+
+[role="alert"] {
+    margin: 0;
+    color: #c0392b;
+    font-size: 14px;
+}
+
+/* Поле выбора даты */
+.mx-datepicker {
+    width: 100%;
+}
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+    #app {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    form {
+        padding: 18px;
+        gap: 15px;
+    }
+
+    form button[type="submit"] {
+        width: 100%;
+    }
+}
